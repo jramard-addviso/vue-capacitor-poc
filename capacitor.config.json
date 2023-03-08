@@ -1,0 +1,6 @@
+{
+  "appId": "com.addviso.vuecapacitorpoc",
+  "appName": "Vue & Capacitor POC",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

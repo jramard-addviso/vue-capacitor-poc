@@ -10,6 +10,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@capacitor/android": "^4.7.0",
+    "@capacitor/cli": "^4.7.0",
+    "@capacitor/core": "^4.7.0",
+    "@capacitor/ios": "^4.7.0",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
