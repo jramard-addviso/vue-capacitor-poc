@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "name": "Bulbasaur",
+      "description": "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
+      "image": "bulbasaur.png",
+      "link": "https://www.pokemon.com/us/pokedex/bulbasaur"
+    },
+    {
+      "name": "Charmander",
+      "description": "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
+      "image": "charmander.png",
+      "link": "https://www.pokemon.com/us/pokedex/charmander"
+    },
+    {
+      "name": "Dratini",
+      "description": "It sheds many layers of skin as it grows larger. During this process, it is protected by a rapid waterfall.",
+      "image": "dratini.png",
+      "link": "https://www.pokemon.com/us/pokedex/dratini"
+    },
+    {
+      "name": "Eevee",
+      "description": "Its ability to evolve into many forms allows it to adapt smoothly and perfectly to any environment.",
+      "image": "eevee.png",
+      "link": "https://www.pokemon.com/us/pokedex/eevee"
+    },
+    {
+      "name": "Jigglypuff",
+      "description": "When its huge eyes waver, it sings a mysteriously soothing melody that lulls its enemies to sleep.",
+      "image": "jigglypuff.png",
+      "link": "https://www.pokemon.com/us/pokedex/jigglypuff"
+    },
+    {
+      "name": "Meowth",
+      "description": "All it does is sleep during the daytime. At night, it patrols its territory with its eyes aglow.",
+      "image": "meowth.png",
+      "link": "https://www.pokemon.com/us/pokedex/meowth"
+    },
+    {
+      "name": "Pikachu",
+      "description": "When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.",
+      "image": "pikachu.png",
+      "link": "https://www.pokemon.com/us/pokedex/pikachu"
+    },
+    {
+      "name": "Psyduck",
+      "description": "It is constantly wracked by a headache. When the headache turns intense, it begins using mysterious powers.",
+      "image": "psyduck.png",
+      "link": "https://www.pokemon.com/us/pokedex/psyduck"
+    },
+    {
+      "name": "Snorlax",
+      "description": "It is not satisfied unless it eats over 880 pounds of food every day. When it is done eating, it goes promptly to sleep.",
+      "image": "snorlax.png",
+      "link": "https://www.pokemon.com/us/pokedex/snorlax"
+    },
+    {
+      "name": "Squirtle",
+      "description": "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
+      "image": "squirtle.png",
+      "link": "https://www.pokemon.com/us/pokedex/squirtle"
+    }
+  ]
+}

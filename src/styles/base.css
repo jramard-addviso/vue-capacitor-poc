@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+/* Color palette */
+:root {
+  --color-primary: #e57f9d;
+  --color-dark: #0d0d0d;
+  --color-light: #f4f4f4;
+}
+
+/* Semantic color variables */
+:root {
+  --app-gradient: linear-gradient(#b8d0f4, #e2d5ec);
+  --border-color: var(--color-dark);
+  --background-color: var(--color-primary);
+  --background-hover-color: var(--color-dark);
+  --title-color: var(--color-light);
+  --title-shadow: 4px 4px 0 #eb452b, 8px 8px 0 #efa032, 12px 12px 0 #46b59b, 16px 16px 0 #017e7f,
+    20px 20px 0 #052939, 24px 24px 0 rgba(0, 0, 0, 0.15);
+  --text-color: var(--color-dark);
+  --link-color: var(--color-dark);
+  --link-hover-color: var(--color-light);
+}
+
+.app--dark {
+  --app-gradient: linear-gradient(#184fa5, #8e5ab4);
+  --border-color: var(--color-primary);
+  --background-color: var(--color-dark);
+  --background-hover-color: var(--color-primary);
+  --text-color: var(--color-light);
+  --link-color: var(--color-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-gradient: linear-gradient(#184fa5, #8e5ab4);
+    --border-color: var(--color-primary);
+    --background-color: var(--color-dark);
+    --background-hover-color: var(--color-primary);
+    --text-color: var(--color-light);
+    --link-color: var(--color-primary);
+  }
+
+  .app--light {
+    --app-gradient: linear-gradient(#b8d0f4, #e2d5ec);
+    --border-color: var(--color-dark);
+    --background-color: var(--color-primary);
+    --background-hover-color: var(--color-dark);
+    --text-color: var(--color-dark);
+    --link-color: var(--color-dark);
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  background: var(--app-gradient);
+  overflow-x: hidden;
+}
+
+.main {
+  padding: 3rem 0;
+}
+
+@media (min-width: 640px) {
+  .main {
+    padding: 4rem 0;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}

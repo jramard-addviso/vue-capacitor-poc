@@ -1,85 +1,65 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { computed } from 'vue'
+import { useRouter, RouterLink, RouterView, isNavigationFailure } from 'vue-router'
+
+import { useColorSchemeStore } from '@/stores/colorScheme'
+import { useHeaderStore } from '@/stores/header'
+
+import Header from '@/components/Header.vue'
+import Switch from '@/components/Switch.vue'
+
+const router = useRouter()
+const colorSchemeStore = useColorSchemeStore()
+const headerStore = useHeaderStore()
+
+router.afterEach((to, from, failure) => {
+  if (isNavigationFailure(failure)) {
+    return
+  }
+  headerStore.close()
+})
+
+const classObject = computed(() => {
+  return {
+    app: true,
+    'app--light': !schemeSwitched.value,
+    'app--dark': schemeSwitched.value
+  }
+})
+
+const schemeSwitched = computed(() => {
+  return colorSchemeStore.switched
+})
+const headerOpen = computed(() => {
+  return headerStore.open
+})
+
+const toggleScheme = () => {
+  colorSchemeStore.toggle()
+}
+const headerToggle = () => {
+  headerStore.toggle()
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div :class="classObject">
+    <Header :open="headerOpen" @toggle="headerToggle()">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/search">Search</RouterLink>
+      <RouterLink to="/list">List</RouterLink>
+      <RouterLink to="/search-api">Search (API)</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+    </Header>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <Switch :switched="schemeSwitched" @toggle="toggleScheme()"></Switch>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+    <RouterView v-slot="{ Component }">
+      <Transition name="fade-slide">
+        <component :is="Component" />
+      </Transition>
+    </RouterView>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+<style></style>
